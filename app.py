@@ -3,6 +3,7 @@
 #----------------------------------------------------------------------------#
 
 import json
+import sys
 import dateutil.parser
 import babel
 from flask import Flask, render_template, request, Response, flash, redirect, url_for
@@ -368,7 +369,7 @@ def create_venue_submission():
   except:
     error = True
     db.session.rollback()
-    #print(sys.exc_info())
+    print(sys.exc_info())
   finally:
     db.session.close()
      
@@ -402,7 +403,7 @@ def delete_venue(venue_id):
   except:
     error = True
     db.session.rollback()
-    # print(sys.exc_info())
+    print(sys.exc_info())
   finally:
     db.session.close()
 
@@ -651,7 +652,7 @@ def edit_artist_submission(artist_id):
   except:
     error = True
     db.session.rollback()
-    # print(sys.exc_info())
+    print(sys.exc_info())
   finally:
     db.session.close()
 
@@ -723,7 +724,7 @@ def edit_venue_submission(venue_id):
   except:
     error = True
     db.session.rollback()
-    # print(sys.exc_info())
+    print(sys.exc_info())
   finally:
     db.session.close()
   if error:
@@ -768,7 +769,7 @@ def create_artist_submission():
   except:
     error = True
     db.session.rollback()
-    #  print(sys.exc_info())
+    print(sys.exc_info())
   finally:
     db.session.close()
   if error:
@@ -864,7 +865,7 @@ def create_show_submission():
   except:
     error = True
     db.session.rollback()
-    # print(sys.exc_info())
+    print(sys.exc_info())
   finally:
     db.session.close()
   if error:
